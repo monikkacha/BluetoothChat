@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkBluetooth() {
-        if (!AppController.isBluetoothOn) {
+        if (!AppController.bluetoothAdapter.isEnabled) {
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT)
         }
@@ -61,9 +61,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_ENABLE_BT) {
-            if (resultCode == RESULT_OK) {
-                AppController.isBluetoothOn = true
-            } else if (resultCode == RESULT_CANCELED) {
+            if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(
                     this,
                     resources.getString(R.string.bluetooth_warning),

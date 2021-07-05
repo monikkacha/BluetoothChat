@@ -9,8 +9,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.builders.bluetoothchat.R
+import com.example.bluetoothchat.Sockets.ClientClass
+import com.example.bluetoothchat.callbacks.ServerSocketCallBack
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-class ConnectionAdapter(var list: List<BluetoothDevice>, var mContext: Context) :
+class ConnectionAdapter(
+    var list: List<BluetoothDevice>,
+    var mContext: Context,
+    var onStateChange: ServerSocketCallBack
+) :
     RecyclerView.Adapter<ConnectionAdapter.ViewHolder>() {
 
 
@@ -22,6 +30,23 @@ class ConnectionAdapter(var list: List<BluetoothDevice>, var mContext: Context) 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var singleDevice = list.get(position)
         holder.bluetoothDeviceName.text = singleDevice.name
+        holder.itemView.setOnClickListener {
+            connectToDevice(singleDevice)
+        }
+    }
+
+    private fun connectToDevice(device: BluetoothDevice) {
+        GlobalScope.launch {
+            ClientClass.connectToDevice(device, object : ServerSocketCallBack {
+                override fun onStateChanged(state: String) {
+                    updateState(state)
+                }
+            })
+        }
+    }
+
+    private fun updateState(state: String) {
+        onStateChange.onStateChanged(state)
     }
 
     override fun getItemCount(): Int {

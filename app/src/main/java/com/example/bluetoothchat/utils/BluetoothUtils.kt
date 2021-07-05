@@ -14,8 +14,7 @@ class BluetoothUtils {
             return if (AppController.bluetoothAdapter != null) {
                 AppController.bluetoothAdapter.bondedDevices.toList()
             } else {
-                initAdapter()
-                getListOfPairedDevices()
+                ArrayList<BluetoothDevice>()
             }
         }
 
