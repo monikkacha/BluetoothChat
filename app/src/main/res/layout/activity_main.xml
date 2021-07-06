@@ -36,7 +36,7 @@
         android:layout_below="@id/toolbar"
         android:background="@color/mine_shaft"
         android:elevation="4dp"
-        app:tabIndicatorColor="@android:color/holo_purple"
+        app:tabIndicatorColor="@color/sky"
         app:tabIndicatorHeight="3dp"
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@android:color/white" />

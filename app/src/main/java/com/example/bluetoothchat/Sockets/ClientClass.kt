@@ -1,12 +1,11 @@
 package com.example.bluetoothchat.Sockets
 
-import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 import com.builders.bluetoothchat.R
 import com.example.bluetoothchat.AppController
 import com.example.bluetoothchat.callbacks.ServerSocketCallBack
-import com.example.bluetoothchat.utils.Constants
+import com.example.bluetoothchat.constants.Constants
 import java.lang.Exception
 import java.util.*
 

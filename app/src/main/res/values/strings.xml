@@ -8,4 +8,6 @@
     <string name="visible">Make Visible</string>
     <string name="scan">Scan</string>
     <string name="uuid">e1481012-dd4d-11eb-ba80-0242ac130004</string>
+    <string name="very_long_text">Message goes here Message goes here Message goes here Message goes here Message goes here Message goes here Message goes here Message goes here Message goes herev vvv Message goes here Message goes here Message goes here Message goes here Message goes here </string>
+    <string name="short_text">Message goes here</string>
 </resources>

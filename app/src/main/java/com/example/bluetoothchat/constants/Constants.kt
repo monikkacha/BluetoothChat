@@ -1,4 +1,4 @@
-package com.example.bluetoothchat.utils
+package com.example.bluetoothchat.constants
 
 class Constants {
     companion object {

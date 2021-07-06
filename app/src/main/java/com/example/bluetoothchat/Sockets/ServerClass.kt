@@ -5,8 +5,8 @@ import android.bluetooth.BluetoothSocket
 import com.builders.bluetoothchat.R
 import com.example.bluetoothchat.AppController
 import com.example.bluetoothchat.callbacks.ServerSocketCallBack
-import com.example.bluetoothchat.utils.Constants.Companion.STATE_CONNECTED
-import com.example.bluetoothchat.utils.Constants.Companion.STATE_CONNECTING
+import com.example.bluetoothchat.constants.Constants.Companion.STATE_CONNECTED
+import com.example.bluetoothchat.constants.Constants.Companion.STATE_CONNECTING
 import java.lang.Exception
 import java.util.*
 

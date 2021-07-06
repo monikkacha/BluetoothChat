@@ -34,7 +34,7 @@ class SendReceive {
             }
 
             var buffer = ByteArray(1024)
-            var bytes: Int = -1
+            var bytes : Int = 0
 
             while (true) {
                 bytes = inputStream.read(buffer)
