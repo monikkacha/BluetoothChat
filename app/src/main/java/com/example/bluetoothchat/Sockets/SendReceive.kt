@@ -44,7 +44,6 @@ class SendReceive {
                 var message = String(buffer, 0, bytes)
                 receiver.onMessageReceived(message)
             }
-
         }
 
         fun sendMessage(message: String) {

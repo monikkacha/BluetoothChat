@@ -14,6 +14,7 @@ class AppController : Application() {
         lateinit var context: Context
         lateinit var bluetoothAdapter: BluetoothAdapter
         var currentUser: UserModel? = null
+        var currentConnectedUser: UserModel? = null
     }
 
     override fun onCreate() {

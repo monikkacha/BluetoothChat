@@ -10,12 +10,12 @@ import com.example.bluetoothchat.fragments.SharedMediaFragment
 class HomeTabAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
-        return 3
+        return 1
     }
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> RecentChatFragment()
+            0 -> ConnectionFragment()
             1 -> ConnectionFragment()
             2 -> SharedMediaFragment()
             else -> RecentChatFragment()

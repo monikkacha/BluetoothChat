@@ -47,7 +47,9 @@ class ConnectionFragment : Fragment(), ServerSocketCallBack {
         GlobalScope.launch {
             ServerClass.initServer(object : ServerSocketCallBack {
                 override fun onStateChanged(state: String) {
-                    stateUpdate(state)
+                    GlobalScope.launch(Dispatchers.Main) {
+                        stateUpdate(state)
+                    }
                 }
             })
         }

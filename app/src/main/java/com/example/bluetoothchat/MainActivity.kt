@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initTabs() {
-        tab_layout.addTab(tab_layout.newTab().setText(resources.getString(R.string.recent)))
+//        tab_layout.addTab(tab_layout.newTab().setText(resources.getString(R.string.recent)))
         tab_layout.addTab(tab_layout.newTab().setText(resources.getString(R.string.connection)))
-        tab_layout.addTab(tab_layout.newTab().setText(resources.getString(R.string.media)))
+//        tab_layout.addTab(tab_layout.newTab().setText(resources.getString(R.string.media)))
         tab_layout.tabGravity = TabLayout.GRAVITY_FILL
 
         var tabAdapter = HomeTabAdapter(supportFragmentManager)

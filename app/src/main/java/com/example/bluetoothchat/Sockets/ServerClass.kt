@@ -38,7 +38,7 @@ class ServerClass {
                 }
 
                 if (bluetoothSocket != null) {
-                    stateChange.onStateChanged(STATE_LISTENING)
+                    stateChange.onStateChanged(STATE_CONNECTED)
                     break
                 }
             }
