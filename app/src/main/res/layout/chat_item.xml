@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="12dp"
+        android:paddingVertical="6dp"
         android:background="@drawable/msg_received_bg"
         android:visibility="gone">
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingHorizontal="12dp"
-            android:paddingVertical="12dp"
+            android:paddingVertical="6dp"
             android:background="@drawable/msg_sent_bg"
             android:gravity="end"
             android:visibility="gone">

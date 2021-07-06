@@ -7,6 +7,7 @@ import com.example.bluetoothchat.AppController
 import com.example.bluetoothchat.callbacks.ServerSocketCallBack
 import com.example.bluetoothchat.constants.Constants.Companion.STATE_CONNECTED
 import com.example.bluetoothchat.constants.Constants.Companion.STATE_CONNECTING
+import com.example.bluetoothchat.constants.Constants.Companion.STATE_LISTENING
 import java.lang.Exception
 import java.util.*
 
@@ -37,7 +38,7 @@ class ServerClass {
                 }
 
                 if (bluetoothSocket != null) {
-                    stateChange.onStateChanged(STATE_CONNECTED)
+                    stateChange.onStateChanged(STATE_LISTENING)
                     break
                 }
             }

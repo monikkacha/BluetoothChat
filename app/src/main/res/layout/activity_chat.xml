@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/mine_shaft">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -28,22 +29,41 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/mine_shaft"
+        android:layout_margin="8dp"
+        android:background="@drawable/chat_box_bg"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/message_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:textColor="@android:color/white" />
+            android:layout_marginLeft="8dp"
+            android:layout_weight="9"
+            android:background="@android:color/white"
+            android:hint="Start typing here..."
+            android:textColor="@android:color/black" />
 
-        <Button
+        <LinearLayout
             android:id="@+id/send_btn"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="send" />
+            android:layout_height="match_parent"
+            android:layout_marginVertical="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/msg_btn_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send"
+                app:tint="@android:color/white" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

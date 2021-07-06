@@ -61,6 +61,7 @@ class ConnectionFragment : Fragment(), ServerSocketCallBack {
             Constants.STATE_CONNECTING -> current_state.text = "Connecting..."
             Constants.STATE_FAILED -> current_state.text = "Failed"
             Constants.STATE_SCANNING -> current_state.text = "Scanning..."
+            Constants.STATE_LISTENING -> current_state.text = "Listening..."
             else -> current_state.text = "Failed"
         }
     }

@@ -1,9 +1,10 @@
 package com.example.bluetoothchat.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioManager
+import android.media.ToneGenerator
 import android.os.Bundle
-import android.os.Message
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.builders.bluetoothchat.R
 import com.example.bluetoothchat.AppController
@@ -18,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+
 
 class ChatActivity : AppCompatActivity() {
 
@@ -42,13 +44,19 @@ class ChatActivity : AppCompatActivity() {
 
     private fun listenForMessage() {
         chatList = ArrayList()
-        SendReceive.listenForOnMessageReceived(object : MessageCallbacks {
+        SendReceive.registerForMessageListening(object : MessageCallbacks {
             override fun onMessageReceived(msg: String) {
                 GlobalScope.launch(Dispatchers.Main) {
                     processMessage(msg)
+                    makeABeep()
                 }
             }
         })
+    }
+
+    private fun makeABeep() {
+        val toneGenerator = ToneGenerator(AudioManager.STREAM_MUSIC, 100)
+        toneGenerator.startTone(ToneGenerator.TONE_SUP_CONFIRM, 150)
     }
 
     private fun processMessage(msg: String) {
@@ -92,5 +100,10 @@ class ChatActivity : AppCompatActivity() {
         message_et.setText("")
 
         processMessage(processedMessage)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        SendReceive.unregisterForMessageListening()
     }
 }
